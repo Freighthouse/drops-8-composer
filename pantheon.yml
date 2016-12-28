@@ -16,3 +16,23 @@ workflows:
         type: webphp
         description: 'Run composer drupal-scaffold'
         script: private/scripts/deploy_product/drupal-scaffold.php
+  create_cloud_development_environment:
+    after:
+        - type: webphp
+          description: Someone has created a multidev environment!
+          script: private/scripts/slack_notification.php
+  deploy:
+    after:
+        - type: webphp
+          description: Someone has deployed!
+          script: private/scripts/slack_notification.php
+  sync_code:
+    after:
+        - type: webphp
+          description: Someone has committed code!
+          script: private/scripts/slack_notification.php
+  clear_cache:
+    after:
+        - type: webphp
+          description: Someone is clearing the cache again!
+          script: private/scripts/slack_notification.php
