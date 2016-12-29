@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e94c55d1e50860692bb7feced6b3828a",
-    "content-hash": "916bafe7be08343cb421bbad09a518c3",
+    "hash": "0cc462cfd0f8035201e4dc949e577ffe",
+    "content-hash": "15b3bd7bd3a776c55cd410f13c30fbb2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1517,71 +1517,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/lightning"
             }
-        },
-        {
-            "name": "drupal/zurb_foundation",
-            "version": "dev-6.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/zurb-foundation",
-                "reference": "f50946017f08c276b6e58e7b3b389d864529cecb"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "branch-alias": {
-                    "dev-6.x": "6.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-6.0-alpha1+9-dev",
-                    "datestamp": "1479408540"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Bcwald",
-                    "homepage": "https://www.drupal.org/user/215794"
-                },
-                {
-                    "name": "alexweber",
-                    "homepage": "https://www.drupal.org/user/850856"
-                },
-                {
-                    "name": "chrisjlee",
-                    "homepage": "https://www.drupal.org/user/760600"
-                },
-                {
-                    "name": "ishmael-sanchez",
-                    "homepage": "https://www.drupal.org/user/464624"
-                },
-                {
-                    "name": "kevinquillen",
-                    "homepage": "https://www.drupal.org/user/317279"
-                },
-                {
-                    "name": "nickBumgarner",
-                    "homepage": "https://www.drupal.org/user/1580732"
-                },
-                {
-                    "name": "samuel.mortenson",
-                    "homepage": "https://www.drupal.org/user/2582268"
-                },
-                {
-                    "name": "shauntyndall",
-                    "homepage": "https://www.drupal.org/user/611384"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/zurb_foundation",
-            "support": {
-                "source": "http://cgit.drupalcode.org/zurb_foundation"
-            },
-            "time": "2016-11-17 18:55:44"
         },
         {
             "name": "drush/drush",
@@ -6634,9 +6569,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "drupal/zurb_foundation": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
