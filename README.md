@@ -1,3 +1,8 @@
+# Packaged with KSS Node for Zurb Foundation
+
+https://github.com/kalamuna/kss-foundation
+https://github.com/kss-node/kss-node/wiki/Quick-Start-Guide
+
 # Example Drops 8 Composer
 
 This repository can be used to set up a Composer-Managed Drupal 8 site on [Pantheon](https://pantheon.io).

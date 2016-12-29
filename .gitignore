@@ -55,6 +55,12 @@ web/sites/default/files
 web/sites/*/settings.local.php
 web/sites/*/services*.yml
 
+# Ignore configuration files that may contain sensitive information.
+local.*
+*.local
+project.local.yml
+settings*.php
+
 # Ignore SimpleTest multi-site environment.
 web/sites/simpletest
 

@@ -1,0 +1,25 @@
+{
+  "name": "kss-foundation",
+  "version": "1.0.0",
+  "description": "KSS Foundation is a Knyle Style Sheet style guide for Foundation.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalamuna/kss-foundation.git"
+  },
+  "author": "Jeremy Michael Cerda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalamuna/kss-foundation/issues"
+  },
+  "homepage": "https://github.com/kalamuna/kss-foundation#readme",
+  "devDependencies": {
+    "kss": "^3.0.0-beta.16"
+  }
+}
