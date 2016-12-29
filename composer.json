@@ -1,74 +1,137 @@
 {
-  "name": "pantheon-systems/example-drops-8-composer",
-  "description": "Install Drupal 8 with Lightning with Composer on Pantheon.",
-  "type": "project",
-  "license": "GPL-2.0+",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  ],
-  "require": {
-    "composer/installers": "^1.0.20",
-    "drupal-composer/drupal-scaffold": "^2.0.1",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~8",
-    "drupal/console": "^1.0.0-rc8",
-    "drush/drush": "~8",
-    "drupal/lightning": "^2.1",
-    "drupal/zurb_foundation": "6.x-dev"
-  },
-  "require-dev": {
-    "mikey179/vfsstream": "~1.2",
-    "behat/behat": "3.*",
-    "behat/mink": "~1.7",
-    "behat/mink-extension": "*",
-    "behat/mink-goutte-driver": "~1.2",
-    "jcalderonzumba/gastonjs": "~1.0.2",
-    "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-    "drupal/drupal-extension": "*",
-    "drush-ops/behat-drush-endpoint": "*",
-    "phpunit/phpunit": "~4.8",
-    "symfony/css-selector": "~2.8"
-  },
-  "conflict": {
-      "drupal/drupal": "*"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-    "classmap": [
-      "scripts/composer/ScriptHandler.php"
-    ]
-  },
-  "scripts": {
-    "build-assets": "echo 'No build step defined.'",
-    "drupal-unit-tests": "cd web/core && ../../vendor/bin/phpunit --testsuite=unit --exclude-group Composer,DependencyInjection,PageCache",
-    "drupal": "drupal --ansi",
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
-    "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ],
-    "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ]
-  },
-  "extra": {
-    "installer-paths": {
-      "web/core": ["type:drupal-core"],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+    "name": "pantheon-systems/example-drops-8-composer",
+    "description": "Install Drupal 8 with Lightning with Composer on Pantheon.",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
     },
-    "drupal-scaffold": {
-      "source": "https://raw.githubusercontent.com/pantheon-systems/drops-8/{version}/{path}",
-      "includes": [
-        "sites/default/default.services.pantheon.preproduction.yml",
-        "sites/default/settings.pantheon.php"
-      ]
+    "require": {
+        "composer/installers": "^1.0.20",
+        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "cweagans/composer-patches": "^1.6.0",
+        "drupal/core": "^8.0",
+        "drush/drush": "^9.0",
+        "drupal/zurb_foundation": "6.x-dev",
+        "acquia/blt": "^8.6",
+        "acquia/lightning": "^2",
+        "drupal/acquia_connector": "^1.5.0",
+        "drupal/acsf": "^1.32.0",
+        "drupal/cog": "^1.0.0",
+        "drupal/features": "^3.0.0",
+        "drupal/memcache": "2.x-dev",
+        "drupal/seckit": "^1.0.0-alpha2",
+        "drupal/security_review": "*",
+        "drupal/shield": "^1.0.0"
+    },
+    "require-dev": {
+        "mikey179/vfsstream": "~1.2",
+        "behat/behat": "^3.1",
+        "behat/mink": "~1.7",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "drupal/drupal-extension": "^3.2",
+        "drush-ops/behat-drush-endpoint": "*",
+        "symfony/css-selector": "~2.8",
+        "behat/mink-selenium2-driver": "^1.3.1",
+        "drupal/devel": "^1.0.0-alpha1",
+        "drupal-composer/drupal-scaffold": "^2.1.0",
+        "jarnaiz/behat-junit-formatter": "^1.3.2",
+        "se/selenium-server-standalone": "^2.53"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "scripts": {
+        "build-assets": "echo 'No build step defined.'",
+        "drupal-unit-tests": "cd web/core && ../../vendor/bin/phpunit --testsuite=unit --exclude-group Composer,DependencyInjection,PageCache",
+        "drupal": "drupal --ansi",
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "blt-alias": "blt install-alias -Dcreate_alias=true",
+        "nuke": [
+            "rm -rf vendor composer.lock",
+            "@composer clearcache",
+            "@composer install"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ]
+        },
+        "drupal-scaffold": {
+            "source": "https://raw.githubusercontent.com/pantheon-systems/drops-8/{version}/{path}",
+            "includes": [
+                "sites/default/default.services.pantheon.preproduction.yml",
+                "sites/default/settings.pantheon.php"
+            ],
+            "initial": {
+                "sites/default/default.services.yml": "sites/default/services.yml",
+                "sites/default/default.settings.php": "sites/default/settings.php"
+            },
+            "excludes": {
+                "sites/development.services.yml": "sites/development.services.yml"
+            }
+        },
+        "blt": {
+            "update": true
+        },
+        "enable-patching": true,
+        "patches": {
+            "acquia/lightning": {
+                "New LightningExtension subcontexts do not autoload": "https://www.drupal.org/files/issues/2836258-3-lightning-extension-autoload.patch"
+            }
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\Tests\\PHPUnit\\": "tests/phpunit/src/"
+        }
     }
-  }
 }
