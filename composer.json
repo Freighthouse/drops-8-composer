@@ -16,7 +16,8 @@
     "drupal/core": "~8",
     "drupal/console": "^1.0.0-rc8",
     "drush/drush": "~8",
-    "drupal/lightning": "^2.1"
+    "drupal/lightning": "^2.1",
+    "drupal/zurb_foundation": "6.x-dev"
   },
   "require-dev": {
     "mikey179/vfsstream": "~1.2",
